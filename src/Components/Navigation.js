@@ -1,17 +1,35 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import { BottomNavigation, BottomNavigationAction } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
+import BottomNavigation from "@material-ui/core/BottomNavigation";
+import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
+import GlobalIcon from "@material-ui/icons/PeopleSharp";
+import MapIcon from "@material-ui/icons/MapSharp";
+import NewsIcon from "@material-ui/icons/FileCopy";
 
 const Navigation = () => {
-  const value = 0;
   const handleChange = () => {};
 
+  const useStyles = makeStyles({
+    root: {
+      width: 500
+    }
+  });
+
+  const classes = useStyles();
+  const [value, setValue] = React.useState(0);
+
   return (
-    <BottomNavigation value={value} onChange={handleChange}>
-      <BottomNavigationAction label="Recents" value="recents" />
-      <BottomNavigationAction label="Favorites" value="favorites" />
-      <BottomNavigationAction label="Nearby" value="nearby" />
-      <BottomNavigationAction label="Folder" value="folder" />
+    <BottomNavigation
+      value={value}
+      onChange={(event, newValue) => {
+        setValue(newValue);
+      }}
+      showLabels
+      className={classes.root}
+    >
+      <BottomNavigationAction label="Global" icon={<GlobalIcon />} />
+      <BottomNavigationAction label="Map" icon={<MapIcon />} />
+      <BottomNavigationAction label="News" icon={<NewsIcon />} />
     </BottomNavigation>
   );
 };
