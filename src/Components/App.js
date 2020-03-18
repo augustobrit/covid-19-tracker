@@ -38,7 +38,7 @@ const App = () => {
 
   return (
     <div>
-      <Stats url={} />
+      <Stats />
       {error && `Error: ${error}`}
       <br />
       <Stats />
