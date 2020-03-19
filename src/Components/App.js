@@ -21,9 +21,9 @@ const App = () => {
   const theme = createMuiTheme({
     palette: {
       primary: {
-        light: "#757ce8",
-        main: "#3f50b5",
-        dark: "#002884",
+        light: "#ff7961",
+        main: "#f44336",
+        dark: "#ba000d",
         contrastText: "#fff"
       },
       secondary: {
@@ -53,11 +53,13 @@ const App = () => {
         <div className={classes.main}>
           <CssBaseline />
           <Header />
-          <Navigation />
           <Box mt={5}>
-            <Stat url={API_GLOBAL} title={"Global Stats"} />
+            <CountrySelect />
           </Box>
           <Box mt={5}>
+            <Stat url={API_GLOBAL} title={"Country Stats"} />
+          </Box>
+          <Box mt={10}>
             <Copyright />
           </Box>
         </div>

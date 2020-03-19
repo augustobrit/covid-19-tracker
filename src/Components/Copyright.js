@@ -8,7 +8,7 @@ const Copyright = () => {
     <Typography variant="body2" color="textSecondary" align="center">
       {"Copyright © "}
       <Link color="inherit" href="https://augustobrit.github.io">
-        August Brito
+        Augusto Brito
       </Link>
       {` ${new Date().getFullYear()}.`}
     </Typography>
