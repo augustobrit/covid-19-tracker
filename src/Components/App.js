@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 
+import Box from "@material-ui/core/Box";
 import Container from "@material-ui/core/Container";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { makeStyles } from "@material-ui/core/styles";
@@ -52,12 +53,13 @@ const App = () => {
         <div className={classes.main}>
           <CssBaseline />
           <Header />
-          <br />
           <Navigation />
-          <br />
-          <Stat url={API_GLOBAL} title={"Global Stats"} />
-          <br />
-          <Copyright />
+          <Box mt={5}>
+            <Stat url={API_GLOBAL} title={"Global Stats"} />
+          </Box>
+          <Box mt={5}>
+            <Copyright />
+          </Box>
         </div>
       </Container>
     </ThemeProvider>
